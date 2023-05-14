@@ -1,21 +1,30 @@
 <?php
-  include 'connection.php';
+    include 'connection.php';
 
-  if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $zip = $_POST['zip'];
 
-    // Process the form data
-    // ...
-  }
+        $sql = "INSERT INTO addresses (name, email, mobile, address, city, zip) VALUES ('$name', '$email', '$mobile', '$address', '$city', '$zip')";
+        $result = $connection->query($sql);
+
+        if ($result === TRUE) {
+            echo "Data inserted successfully";
+        } else {
+            echo "Error inserting data: " . $connection->error;
+        }
+    }
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Address Book</title>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
