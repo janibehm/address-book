@@ -18,33 +18,33 @@ if ($page === 'view_contacts') {
 <body>
   <div class="container">
     <h1>Address Book</h1>
-<form method="POST" action="insert.php">
+    <form method="POST" action="insert.php">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email">
+          <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputMobile">Mobile</label>
-          <input type="text" class="form-control" id="inputMobile" name="mobile" placeholder="Mobile">
+          <input type="text" class="form-control" id="inputMobile" name="mobile" placeholder="Mobile" required>
         </div>
       </div>
       <div class="form-group">
         <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" required>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity" name="city">
+          <input type="text" class="form-control" id="inputCity" name="city" required>
         </div>
         <div class="form-group col-md-2">
           <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip" name="zip">
+          <input type="text" class="form-control" id="inputZip" name="zip" required>
         </div>
       </div>
       <button type="submit" name="submit" value="Submit" class="btn btn-primary my-4">Add contact</button>
