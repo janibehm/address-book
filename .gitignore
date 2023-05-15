@@ -4,3 +4,6 @@ Dockerfile
 # Ignore YAML files
 *.yaml
 *.yml
+
+#
+.phpintel

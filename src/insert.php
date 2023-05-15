@@ -19,4 +19,5 @@ if (isset($_POST['submit'])) {
         echo "Error inserting data: " . $connection->error;
     }
 }
+mysqli_close($connection);
 ?>

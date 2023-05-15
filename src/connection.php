@@ -1,9 +1,5 @@
 <?php
-$host = 'db';
-$port = '3306';
-$database = 'crud';
-$username = 'root';
-$password = 'lionPass';
+include 'config.php';
 
 $connection = new mysqli($host . ':' . $port, $username, $password, $database);
 

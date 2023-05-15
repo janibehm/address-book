@@ -1,7 +1,3 @@
-<?php
-   include 'connection.php';
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,11 +19,15 @@
             <th scope="col">Address</th>
             <th scope="col">City</th>
             <th scope="col">Zip</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
 
-        <?php
+          <?php
+
+          include 'connection.php';
+
           $sql = "SELECT * FROM `addresses`";
           $result = mysqli_query($connection, $sql);
 
@@ -41,12 +41,16 @@
               echo "<td>" . $row['address'] . "</td>";
               echo "<td>" . $row['city'] . "</td>";
               echo "<td>" . $row['zip'] . "</td>";
+              echo "<td>
+                      <button class='btn btn-primary'><a href='update.php?updateId=" . $row['id'] . "'>Update</a></button>
+                      <button class='btn btn-danger'><a href='delete.php?deleteId=" . $row['id'] . "'>Delete</a></button>
+                    </td>";
               echo "</tr>";
             }
           } else {
             echo "Error executing query: " . mysqli_error($connection);
           }
-        ?>
+          ?>
 
         </tbody>
       </table>
