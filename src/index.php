@@ -47,7 +47,7 @@ if ($page === 'view_contacts') {
           <input type="text" class="form-control" id="inputZip" name="zip">
         </div>
       </div>
-      <button type="submit" name="submit" value="Submit" class="btn btn-primary my-4">Add address</button>
+      <button type="submit" name="submit" value="Submit" class="btn btn-primary my-4">Add contact</button>
     </form>
   </div>
 </body>

@@ -9,7 +9,6 @@ if (isset($_POST['submit'])) {
     $city = $_POST['city'];
     $zip = $_POST['zip'];
 
-    $sql = "INSERT INTO addresses (name, email, mobile, address, city, zip) VALUES ('$name', '$email', '$mobile', '$address', '$city', '$zip')";
     $result = $connection->query($sql);
 
     if ($result === TRUE) {
