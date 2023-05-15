@@ -24,33 +24,33 @@
         </thead>
         <tbody>
 
-          <?php
+            <?php
+        include 'connection.php';
 
-          include 'connection.php';
+        $sql = "SELECT * FROM `addresses`";
+        $result = mysqli_query($connection, $sql);
 
-          $sql = "SELECT * FROM `addresses`";
-          $result = mysqli_query($connection, $sql);
-
-          if ($result) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              echo "<tr>";
-              echo "<th scope='row'>" . $row['id'] . "</th>";
-              echo "<td>" . $row['name'] . "</td>";
-              echo "<td>" . $row['email'] . "</td>";
-              echo "<td>" . $row['mobile'] . "</td>";
-              echo "<td>" . $row['address'] . "</td>";
-              echo "<td>" . $row['city'] . "</td>";
-              echo "<td>" . $row['zip'] . "</td>";
-              echo "<td>
-                      <button class='btn btn-primary'><a href='update.php?updateId=" . $row['id'] . "'>Update</a></button>
-                      <button class='btn btn-danger'><a href='delete.php?deleteId=" . $row['id'] . "'>Delete</a></button>
-                    </td>";
-              echo "</tr>";
-            }
-          } else {
-            echo "Error executing query: " . mysqli_error($connection);
+        if ($result) {
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<th scope='row'>" . $row['id'] . "</th>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>" . $row['mobile'] . "</td>";
+            echo "<td>" . $row['address'] . "</td>";
+            echo "<td>" . $row['city'] . "</td>";
+            echo "<td>" . $row['zip'] . "</td>";
+            echo "<td>
+                    <button class='btn btn-primary' class="text-light"><a href='update.php?updateId=" . $row['id'] . "' style='color: inherit; text-decoration: none;'>Update</a></button>
+                    <button class='btn btn-danger' class="text-light"'><a href='delete.php?deleteId=" . $row['id'] . "' style='color: inherit; text-decoration: none;'>Delete</a></button>
+                  </td>";
+            echo "</tr>";
           }
-          ?>
+        } else {
+          echo "Error executing query: " . mysqli_error($connection);
+        }
+        ?>
+
 
         </tbody>
       </table>
